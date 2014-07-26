@@ -32,6 +32,7 @@ Rectangle
     {
         id   : msg_list
         clip : true
+        boundsBehavior: Flickable.StopAtBounds;
         anchors
         {
             left   : parent.left

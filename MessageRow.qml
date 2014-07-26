@@ -142,6 +142,8 @@ Item
             caption: "Удалить"
             caption_color: "white"
 
+            center: true
+
             onClicked: {
                 message_element_item.remove();
             }

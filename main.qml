@@ -77,11 +77,18 @@ Window
                     msg_priority  : priority
                 }
                 messages_model.insert(0, msg_)
+
+                if (Qt.platform.os === "android") {
+                    notificationClient.notify("Вам сообщение!", msg[2])
+                }
             }
         }
     } // function ready
 
     Component.onCompleted: {
         http_request.onreadystatechange = ready
+
+        settings.set("server_address", "http://pushme.k12.ru");
+        settings.set("login", "aleus");
     }
 }

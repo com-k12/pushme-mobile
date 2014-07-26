@@ -89,6 +89,8 @@ Rectangle
             caption: "Назад"
             caption_color: "white"
 
+            center: true
+
             onClicked: {
                 main_form.closeFull();
             }
@@ -104,6 +106,8 @@ Rectangle
 
             caption: "Удалить"
             caption_color: "white"
+
+            center: true
 
             onClicked: {
                 messages_model.remove(index);
