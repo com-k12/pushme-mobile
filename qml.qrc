@@ -1,0 +1,12 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>ActionBar.qml</file>
+        <file>Consts.qml</file>
+        <file>MainForm.qml</file>
+        <file>ImageButton.qml</file>
+        <file>images/gear.png</file>
+        <file>MessageRow.qml</file>
+        <file>TextButton.qml</file>
+    </qresource>
+</RCC>
