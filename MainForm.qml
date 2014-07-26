@@ -5,9 +5,11 @@ import QtQuick 2.0
  ****************************/
 Rectangle
 {
+    id: main_form
     anchors {
         fill: parent;
     }
+
     ActionBar
     {
         id          : action_bar
@@ -49,40 +51,35 @@ Rectangle
             priority  : msg_priority;
 
             onRemove: {
-                obj_model.remove(index);
+                messages_model.remove(index);
+            }
+
+            onMessageClicked: {
+                msg_list.currentIndex = index;
+                full_loader.sourceComponent = messages_full;
             }
         }
 
-        model:  obj_model
-
-        ListModel
-        {
-            id: obj_model
-            ListElement {
-                msg_is_readed : false
-                msg_text      : "СКОМПИЛИЛАСЬ ТВОЯ ФЛasdasdasdasЕШКА!!!"
-                msg_time      : "00:00:00"
-                msg_priority      : 'OK'
-            }
-            ListElement {
-                msg_is_readed : false
-                msg_text      : "Зайди"
-                msg_time      : "11:22:33"
-                msg_priority      : 'WARNING'
-            }
-            ListElement {
-                msg_is_readed : true
-                msg_text      : "Привет, как твои дела?"
-                msg_time      : "44:55:66"
-                msg_priority      : 'CRITICAL'
-            }
-            ListElement {
-                msg_is_readed : true
-                msg_text      : "Всем быстренько на совещание!"
-                msg_time      : "77:88:99"
-                msg_priority      : 'INFO'
-            }
-        }
+        model:  messages_model
     }
     color: "white"
+
+    Component
+    {
+        id: messages_full
+        MessageFull {
+            index: msg_list.currentIndex
+        }
+    }
+
+    Loader
+    {
+        id: full_loader
+        anchors.fill    : parent
+        sourceComponent : null
+    }
+
+    function closeFull() {
+        full_loader.sourceComponent = null;
+    }
 }

@@ -14,6 +14,7 @@ Item
     property string message : ""
 
     signal remove();
+    signal messageClicked();
 
     ListView
     {
@@ -101,6 +102,14 @@ Item
                 verticalAlignment: Text.AlignVCenter
 
                 font.pixelSize: consts.ui_font_middle
+            }
+
+            MouseArea
+            {
+                anchors.fill: parent
+                onClicked: {
+                    message_element_item.messageClicked()
+                }
             }
         }
     }

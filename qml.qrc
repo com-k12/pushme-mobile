@@ -8,5 +8,6 @@
         <file>images/gear.png</file>
         <file>MessageRow.qml</file>
         <file>TextButton.qml</file>
+        <file>MessageFull.qml</file>
     </qresource>
 </RCC>
