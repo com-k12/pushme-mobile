@@ -36,6 +36,6 @@ Item
     }
 
     //******* Время обновления ********
-    readonly property int server_timer_interval: 10000;
+    readonly property int server_timer_interval: 1000;
 
 }

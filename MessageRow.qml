@@ -15,6 +15,7 @@ Item
 
     signal remove();
     signal messageClicked();
+    signal messageRead();
 
     ListView
     {
@@ -107,8 +108,20 @@ Item
             MouseArea
             {
                 anchors.fill: parent
-                onClicked: {
-                    message_element_item.messageClicked()
+
+                property real startX: 0;
+
+                onPressed: {
+                    startX = mouseX;
+                }
+
+                onReleased:
+                {
+                    if (( mouseX - startX) >  consts.mm*4) {
+                        message_element_item.messageRead();
+                    } else {
+                        message_element_item.messageClicked()
+                    }
                 }
             }
         }

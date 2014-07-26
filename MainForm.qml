@@ -58,6 +58,10 @@ Rectangle
                 msg_list.currentIndex = index;
                 full_loader.sourceComponent = messages_full;
             }
+
+            onMessageRead: {
+                messages_model.get(index).msg_is_readed = true;
+            }
         }
 
         model:  messages_model

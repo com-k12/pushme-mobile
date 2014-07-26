@@ -91,7 +91,7 @@ Window
                     msg_time      : msg[0],
                     msg_priority  : priority
                 }
-                messages_model.insert(0,msg_)
+                messages_model.insert(0, msg_)
             }
         }
     }
