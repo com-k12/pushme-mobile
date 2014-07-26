@@ -5,9 +5,15 @@
         <file>Consts.qml</file>
         <file>MainForm.qml</file>
         <file>ImageButton.qml</file>
-        <file>images/gear.png</file>
         <file>MessageRow.qml</file>
         <file>TextButton.qml</file>
         <file>MessageFull.qml</file>
+        <file>Options.qml</file>
+        <file>ServerOptions.qml</file>
+        <file>NotificationsOptions.qml</file>
+        <file>GraphicOptions.qml</file>
+        <file>images/ic_action_previous_item.png</file>
+        <file>images/gear.png</file>
+        <file>Settings.qml</file>
     </qresource>
 </RCC>

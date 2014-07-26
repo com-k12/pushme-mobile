@@ -14,7 +14,11 @@ Rectangle
     }
     height: consts.ui_actionbar_height;
 
-    color   : "lightgray"
+    gradient: Gradient
+    {
+        GradientStop {position: 0; color: "#414141";}
+        GradientStop {position: 1; color: "#6E6E6E";}
+    }
 
     // Надпись
     Text

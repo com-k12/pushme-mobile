@@ -16,15 +16,16 @@ Item
     readonly property real ui_left_message: 2*mm;          // Цветовой индикатор слева от сообщения
 
     //******* Шрифты ********
-    readonly property real ui_font_small  : mm*3;          // Маленький шрифт
-    readonly property real ui_font_middle : mm*3.5;        // Средний   шрифт
+    readonly property real ui_font_small  : mm*2.5;          // Маленький шрифт
+    readonly property real ui_font_middle : mm*3;        // Средний   шрифт
     readonly property real ui_font_big    : mm*5;          // Большой   шрифт
 
     //******* Размеры ********
     readonly property real delete_button_width: mm*20;
-    readonly property real cell_height: mm*10;
+    readonly property real cell_height: mm*8;
     readonly property real ui_actionbar_height: mm*10; // Высота верхней панели
     readonly property real ui_bottom_bar_height: mm*10;
+
     //******* Цвета приоритетов ********
     property var priority_colors:
     {
@@ -33,4 +34,8 @@ Item
        'CRITICAL' : "red",
        'INFO'     : "grey"
     }
+
+    //******* Время обновления ********
+    readonly property int server_timer_interval: 10000;
+
 }

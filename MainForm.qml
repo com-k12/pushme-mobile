@@ -22,7 +22,7 @@ Rectangle
                 image_button  : "qrc:/images/gear.png";
                 image_clicked : image_button;
                 onClicked: {
-                    console.log("pressed")
+                    full_loader.sourceComponent = options_component;
                 }
             }
         }
@@ -70,6 +70,12 @@ Rectangle
         MessageFull {
             index: msg_list.currentIndex
         }
+    }
+
+    Component
+    {
+        id: options_component
+        Options { }
     }
 
     Loader

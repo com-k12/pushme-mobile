@@ -3,8 +3,8 @@ import QtQuick 2.0
 Rectangle
 {
     id: button
-    property string button_color: ""
-    property string pressed_color: ""
+    property string button_color: "white"
+    property string pressed_color: "lightblue"
     property string caption : ""
     property string caption_color: "black"
 
@@ -19,6 +19,7 @@ Rectangle
         anchors.centerIn : parent
         text             : caption
         color            : caption_color
+        font.pixelSize   : consts.ui_font_middle
     }
 
     MouseArea
