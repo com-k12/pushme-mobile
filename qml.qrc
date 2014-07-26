@@ -15,5 +15,8 @@
         <file>images/ic_action_previous_item.png</file>
         <file>images/gear.png</file>
         <file>Settings.qml</file>
+        <file>images/notify.png</file>
+        <file>images/servers.png</file>
+        <file>images/view.png</file>
     </qresource>
 </RCC>

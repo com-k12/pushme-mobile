@@ -37,6 +37,7 @@ Rectangle
             height  : consts.cell_height;
             width   : parent.width
             caption : "Сервера"
+            image_source: "qrc:/images/servers.png"
 
             onClicked:  {
                 options_loader.sourceComponent = server_options_component
@@ -48,6 +49,8 @@ Rectangle
             height  : consts.cell_height;
             width   : parent.width
             caption : "Уведомления"
+            image_source: "qrc:/images/notify.png"
+
             onClicked:  {
                 options_loader.sourceComponent = notif_options_component
             }
@@ -58,6 +61,7 @@ Rectangle
             height  : consts.cell_height;
             width   : parent.width
             caption : "Оформление"
+            image_source: "qrc:/images/view.png"
 
             onClicked:  {
                 options_loader.sourceComponent = graphics_options_component

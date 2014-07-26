@@ -137,6 +137,8 @@ Rectangle
         pressed_color: "lightgreen"
         caption_color: "white"
         caption: "+"
+        center: true
+        font_size: consts.ui_font_big
     }
 
 }
