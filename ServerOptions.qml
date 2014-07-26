@@ -26,120 +26,117 @@ Rectangle
 
     Column
     {
+        id: column1
         anchors {
-            top    : action_bar.bottom
+            top      : action_bar.bottom
             topMargin: consts.ui_margin
-            left   : parent.left
-            right  : parent.right
+            left     : parent.left
+            leftMargin: consts.ui_margin
         }
         spacing: consts.ui_margin
 
         // Адрес сервера
-        Row
-        {
-            height : consts.cell_height
-            x      : consts.ui_margin
-
             Text {
                 id     : txt1
                 text   : "Адрес: "
-                height : parent.height
+                height: consts.cell_height
                 verticalAlignment: Text.AlignVCenter
-            }
-
-            TextField
-            {
-                height: parent.height
-                width : server_options_screen.width - txt1.width - consts.ui_margin*3
-
-                onAccepted:  {
-                    settings.set("server_address", text)
-                }
-
-                onEditingFinished: {
-                    settings.set("server_address", text)
-                }
-
-                Component.onCompleted: {
-                    text = settings.get("server_address", "")
+                anchors {
+                    left: parent.left
                 }
             }
-        }
-        // Адрес сервера
-        Row
-        {
-            height : consts.cell_height
-            x      : consts.ui_margin
 
             Text {
                 id     : txt2
                 text   : "Логин: "
-                height : parent.height
+                height: consts.cell_height
                 verticalAlignment: Text.AlignVCenter
-            }
-
-            TextField
-            {
-                height: parent.height
-                width : server_options_screen.width - txt2.width - consts.ui_margin*3
-
-                onAccepted:  {
-                    settings.set("login", text)
-                }
-
-                onEditingFinished: {
-                    settings.set("login", text)
-                }
-
-                Component.onCompleted: {
-                    text = settings.get("login", "")
+                anchors {
+                    left: parent.left
                 }
             }
-        }
-        // Адрес сервера
-        Row
-        {
-            height : consts.cell_height
-            x      : consts.ui_margin
 
             Text {
                 id     : txt3
                 text   : "Пароль: "
-                height : parent.height
+                height: consts.cell_height
                 verticalAlignment: Text.AlignVCenter
+                anchors {
+                    left: parent.left
+                }
+                Rectangle {
+                    color: "green"
+                }
             }
+    }
 
-            TextField
-            {
-                height: parent.height
-                width : server_options_screen.width - txt3.width - consts.ui_margin*3
-
-                onAccepted:  {
-                    settings.set("password", text)
-                }
-
-                onEditingFinished: {
-                    settings.set("password", text)
-                }
-
-                Component.onCompleted: {
-                    text = settings.get("password", "")
-                }
-
-                echoMode: TextInput.Password
-            }
+    Column {
+        id: column2
+        anchors {
+            top    : action_bar.bottom
+            topMargin: consts.ui_margin + consts.ui_spacing
+            left   : column1.right
+            right  : parent.right
+            rightMargin: consts.ui_margin
         }
+        spacing: consts.ui_margin + 2*consts.ui_spacing
 
-        TextButton
+        TextField
         {
-            x      : consts.ui_margin
-            width  : server_options_screen.width - x*2
-            height : consts.cell_height
-            button_color: "green"
-            pressed_color: "lightgreen"
-            caption_color: "white"
-            caption: "+"
+            anchors {
+                left: parent.left
+                right: parent.right
+            }
+            height: consts.cell_height-2*consts.ui_spacing
+
+            onAccepted:  { settings.set("server_address", text) }
+            onEditingFinished: { settings.set("server_address", text) }
+            Component.onCompleted: { text = settings.get("server_address", "") }
         }
+
+        TextField
+        {
+            anchors {
+                left: parent.left
+                right: parent.right
+            }
+            height: consts.cell_height-2*consts.ui_spacing
+
+            onAccepted:  { settings.set("login", text) }
+            onEditingFinished: { settings.set("login", text) }
+            Component.onCompleted: { text = settings.get("login", "") }
+        }
+
+        TextField
+        {
+            id: password_input
+            echoMode: TextInput.Password
+            anchors {
+                left: parent.left
+                right: parent.right
+            }
+            height: consts.cell_height-2*consts.ui_spacing
+
+            onAccepted:  { settings.set("password", text) }
+            onEditingFinished: { settings.set("password", text) }
+            Component.onCompleted: { text = settings.get("password", "") }
+        }
+    }
+
+    TextButton
+    {
+        anchors {
+            left: parent.left
+            right: parent.right
+            top: column1.bottom
+            margins: consts.ui_margin
+        }
+
+        height : consts.cell_height
+        button_color: "green"
+        pressed_color: "lightgreen"
+        caption_color: "white"
+        caption: "+"
     }
 
 }

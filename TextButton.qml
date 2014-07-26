@@ -13,7 +13,6 @@ Rectangle
            ? pressed_color
            : button_color;
 
-
     Text
     {
         text             : caption
@@ -34,4 +33,13 @@ Rectangle
         }
     }
 
+    Rectangle {
+        anchors {
+            left: parent.left
+            right: parent.right
+            bottom: parent.bottom
+        }
+        color: "lightgray"
+        height: 1
+    }
 }

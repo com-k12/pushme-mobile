@@ -29,6 +29,7 @@ Rectangle
             right : parent.right
             top   : action_bar.bottom
             leftMargin: consts.ui_margin
+            rightMargin: consts.ui_margin
         }
 
         TextButton

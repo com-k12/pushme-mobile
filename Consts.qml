@@ -25,6 +25,7 @@ Item
     readonly property real cell_height: mm*8;
     readonly property real ui_actionbar_height: mm*10; // Высота верхней панели
     readonly property real ui_bottom_bar_height: mm*10;
+    readonly property int ui_hr_height: 0.25*mm
 
     //******* Цвета приоритетов ********
     property var priority_colors:
