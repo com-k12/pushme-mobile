@@ -29,10 +29,10 @@ Item
     //******* Цвета приоритетов ********
     property var priority_colors:
     {
-       'OK'       : "green",
-       'WARNING'  : "orange",
+       'OK'       : "#b0faab",
+       'WARNING'  : "#ffa740",
        'CRITICAL' : "red",
-       'INFO'     : "grey"
+       'INFO'     : "#c1c1c1"
     }
 
     //******* Время обновления ********

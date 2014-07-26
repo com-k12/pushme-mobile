@@ -14,26 +14,21 @@ Rectangle
     }
     height: consts.ui_actionbar_height;
 
-    gradient: Gradient
-    {
-        GradientStop {position: 0; color: "#414141";}
-        GradientStop {position: 1; color: "#6E6E6E";}
-    }
+    //gradient: Gradient
+    //{
+    //    GradientStop { position: 0.00 ; color: "#ff8800" }
+    //    GradientStop { position: 0.97 ; color: "#fe7b00" }
+    //    GradientStop { position: 1.00 ; color: "#ef7400" }
+    //}
+    color: "#254152"
 
     // Надпись
     Text
     {
         text: caption
-        anchors {
-            left   : left_button_loader.right
-            right  : right_button_loader.left
-            top    : parent.top
-            bottom : parent.bottom
-        }
-
-        verticalAlignment   : Text.AlignVCenter
-        horizontalAlignment : Text.AlignHCenter
+        anchors.centerIn: parent
         font.pixelSize      : consts.ui_font_big
+        color: "white"
     }
 
 

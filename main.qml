@@ -4,28 +4,17 @@ import QtQuick.Window 2.1
 Window
 {
     visible : true
-    width   : 360
-    height  : 720
+    width   : 260
+    height  : 420
 
     property var  http_request : new XMLHttpRequest()
 
-    Consts {
-        id: consts;
-    }
-
-    Settings {
-        id: settings
-    }
-
-    MainForm
-    {
-    }
+    Consts { id: consts; }
+    Settings { id: settings }
+    MainForm { }
 
     // Модель сообщенй
-    ListModel
-    {
-        id: messages_model
-    }
+    ListModel { id: messages_model }
 
     Timer
     {
@@ -52,10 +41,6 @@ Window
 
     function parseResonse(response) {
 
-    }
-
-    Component.onCompleted: {
-        http_request.onreadystatechange = ready
     }
 
     // готово для загрузки
@@ -94,5 +79,9 @@ Window
                 messages_model.insert(0, msg_)
             }
         }
+    } // function ready
+
+    Component.onCompleted: {
+        http_request.onreadystatechange = ready
     }
 }
