@@ -16,10 +16,13 @@ Rectangle
 
     Text
     {
-        anchors.centerIn : parent
         text             : caption
         color            : caption_color
         font.pixelSize   : consts.ui_font_middle
+        anchors {
+            verticalCenter: parent.verticalCenter
+            left: parent.left
+        }
     }
 
     MouseArea

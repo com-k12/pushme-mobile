@@ -41,9 +41,8 @@ Rectangle
             left   : parent.left
             top    : parent.top
             bottom : parent.bottom
-            margins: consts.ui_spacing
+            margins: consts.ui_margin
         }
-        width   : left_button === null ? 0     : height
         visible : left_button === null ? false : true
     }
 
@@ -56,7 +55,7 @@ Rectangle
             right  : parent.right
             top    : parent.top
             bottom : parent.bottom
-            margins: consts.ui_spacing
+            margins: consts.ui_margin
         }
         width   : right_button === null ? 0     : height
         visible : right_button === null ? false : true

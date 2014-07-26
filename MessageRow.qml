@@ -80,10 +80,11 @@ Item
                     bottom : parent.bottom;
                     leftMargin: consts.ui_margin
                 }
+                color: priority !== "CRITICAL" ? "gray" : "black"
 
                 text: time;
                 verticalAlignment: Text.AlignVCenter
-                font.pixelSize: consts.ui_font_middle
+                font.pixelSize: consts.ui_font_small
             }
 
             // Сообщение
