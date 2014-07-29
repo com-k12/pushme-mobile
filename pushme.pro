@@ -2,8 +2,7 @@ TEMPLATE = app
 
 QT += qml quick sql
 
-SOURCES += main.cpp \
-    NotificationClient.cpp
+SOURCES += main.cpp
 
 RESOURCES += qml.qrc
 
@@ -18,9 +17,11 @@ android {
     QT += androidextras
     OTHER_FILES += $$PWD/android/AndroidManifest.xml \
                    $$PWD/android/src/com/k12/pushme/NotificationClient.java
+    SOURCES +=
+        NotificationClient.cpp
+
+    HEADERS += \
+        NotificationClient.h
 
     ANDROID_PACKAGE_SOURCE_DIR = $$PWD/android
 }
-
-HEADERS += \
-    NotificationClient.h
